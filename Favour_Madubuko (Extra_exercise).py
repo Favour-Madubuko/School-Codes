@@ -35,8 +35,11 @@ while True:
         break
 '''
 
-def any_lowercase4(s):
-    flag = False
-    for c in s:
-        flag = flag or c.islower()
-    return flag
+some_list = [1,2,3]
+len_of_sl = len(some_list)
+
+for index in range (len_of_sl):
+    print(some_list[index])
+    some_list[index] += 2
+    some_list[index] *= 2
+    print(some_list[index])
