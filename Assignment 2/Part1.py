@@ -141,18 +141,26 @@ def all_population_data():
     print(f"{country_names[min_index(population)]} is the least populated country with population of {min(population):,d}")
     print(f"{country_names[max_index(literacy)]} has the highest literacy of {max(literacy)}")
     print(f"{country_names[min_index(literacy)]} has the lowest literacy of {min(literacy)}")
+
     average_literacy = (sum(pairwise_product(literacy, population)))/sum(population)
+
     print(f"The average literacy rate in Africa is {(average_literacy):.3f}")
     print(f"{country_names[max_index(mobile_subscription_per_capita_list)]} has the highest mobile subscriptions per capita {max(mobile_subscription_per_capita_list)}")
     print(f"{country_names[min_index(internet_users_per_capita_list)]} has the lowest mobile subscription per capita {min(internet_users_per_capita_list)}")
     print("\n")
+
     electricity_exporters = smaller_indices(electricity_consumption,electricity_production)
+
     print("The countries that produce more electricity than they consume (electricity exporters)")
+
     for exporters in electricity_exporters:
         print(country_names[exporters])
+
     print("\n")
     electricity_importers = smaller_indices(electricity_production,electricity_consumption)
+
     print("The countries that consume more electricity than they produce (electricity importers)")
+    
     for importers in electricity_importers:
         print(country_names[importers])
 
