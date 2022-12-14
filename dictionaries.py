@@ -91,25 +91,86 @@ def reverse_lookup():
 
 
 
-open_file = open('thedata.csv')
-open_file.readlines()
 
-the_dates = []
-the_rates = []
 
-def allfiles(filename):
-    open_file = open(filename)
-    open_file.readlines()
-    the_dates = []
-    the_rates = []
-for lines in open_file:
-    the_data = lines.strip()
-    the_data = the_data.split(',')
-    the_dates.append(the_data[0])
-    the_rates.append(the_data[1])
-    the_difference = (the_rates[-1] - the_rates[0])
-filename.close()
-return the_difference
+
+
+
+#1
+enter_name = input("Enter your string: ")
+#An empty list is initialized
+list_name = []
+#The for loop loops through the given string
+for letter in enter_name:
+    if letter not in list_name:
+        list_name.append(letter)
+list_name = sorted(list_name)
+#The for loop loops through the list
+for letter in list_name:
+    #The count method counts the number of times a letter occurs in the string
+    print(letter, enter_name.count(letter)) 
+    
+#2.
+enter_name = input("Enter your string: ")
+def lower_upper_count():
+    lowercase_count = 0
+    uppercase_count = 0
+    for letter in enter_name:
+        if letter.islower():
+            lowercase_count += 1
+        elif letter.isupper():
+            uppercase_count += 1
+    final = {'lower': lowercase_count, 'upper': uppercase_count}
+    return final
+print(lower_upper_count())
+
+#3.
+def OddEvenCount(integers):
+   list_name = integers
+   even_element = 0
+   odd_element = 0
+   for each_element in list_name:
+       if each_element % 2 == 0:
+           even_element += 1
+       elif each_element % 2 != 0:
+           odd_element += 1
+       elif list_name == []:
+           even_element == 0
+           odd_element == 0
+   the_dict = {'odd': odd_element, 'even': even_element}
+   return the_dict
+print(OddEvenCount([1,2,3,4,5,6,8,66,55,34,12]))
+print(OddEvenCount([]))
+
+#4.
+pi = "3.1415926535897932384626433832795028841971693993751"
+the_list = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
+for value in pi:
+    if value == '.':
+        continue
+    else:
+        the_list[int(value)] += 1
+print(the_list)
+
+#print(f"The digit {letter} has count {enter_name.count(letter)})
+#5. 
+def digit_count(float_number):
+    the_list = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
+    for number in float_number:
+        if number == '.':
+            continue
+        else:
+            the_list[int(number)] += 1
+    return the_list
+print(digit_count("1.332"))
+
+
+
+
+
+
+
+
     
     
     
